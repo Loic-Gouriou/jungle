@@ -1,6 +1,7 @@
 package com.company;
 
 public class Prey {
+
     private int Age;
     private int AgeMax;
     private static final int AgeMaxAll = 42;
@@ -11,6 +12,8 @@ public class Prey {
 
     private Hearing hearing;
     private Vision vision;
+
+    private Coords coords;
 
     public void moveToFeed(Plant plant){
 
