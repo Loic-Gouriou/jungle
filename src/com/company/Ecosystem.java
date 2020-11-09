@@ -2,10 +2,16 @@ package com.company;
 
 public class Ecosystem {
 
-    WaterSpot waterSpot;
+    private int waterWidth;
+    private int waterHeight;
+
+    private WaterSpot waterSpot;
+
 
     public Ecosystem(){
-        waterSpot = new WaterSpot();
+        waterHeight = 30;
+        waterWidth = 120;
+        waterSpot = new WaterSpot(500, waterHeight/4, waterWidth/4);
     }
 
     public Ecosystem(WaterSpot waterSpot) {
