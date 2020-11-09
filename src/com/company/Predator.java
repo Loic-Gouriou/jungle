@@ -1,31 +1,31 @@
 package com.company;
 
 public class Predator {
-    int Age;
-    int AgeMax;
-    static final int AgeMaxAll = 42;
+    private int Age;
+    private int AgeMax;
+    private static final int AgeMaxAll = 42;
 
-    int NbLifePoints;
-    int NbLifePointsMax;
-    static final int NbLifePointsAll = 100;
+    private int NbLifePoints;
+    private int NbLifePointsMax;
+    private static final int NbLifePointsAll = 100;
 
-    Smelling smelling;
-    Vision vision;
+    private Smelling smelling;
+    private Vision vision;
 
-    public void hunt(){
-
-    }
-    public void mate(){
+    public void hunt(Prey prey){
 
     }
-    public void eat(){
+    public void mate(Predator predator){
 
     }
-    public void drink(){
+    public void eat(Prey prey){
+
+    }
+    public void drink(WaterSpot waterSpot){
 
     }
     public void move(){
 
     }
-    
+
 }
