@@ -14,7 +14,6 @@ public class WaterSpot {
     }
 
     public void update() {
-        System.out.println("water quantity left : " + waterQuantity);
     }
 
     public int getWaterForDrink(int WaterQuantityRequested) {

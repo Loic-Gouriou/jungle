@@ -1,4 +1,6 @@
 package com.company.environment;
 
-public class Resource {
+import com.company.Drawable;
+
+public class Resource extends Drawable {
 }

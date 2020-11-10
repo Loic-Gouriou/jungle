@@ -1,11 +1,12 @@
 package com.company.creatures;
 
+import com.company.Drawable;
 import com.company.environment.Coords;
 import com.company.environment.Ecosystem;
 import com.company.senses.Vision;
 import com.company.environment.WaterSpot;
 
-public class Animals {
+public class Animals extends Drawable {
     private Vision vision;
 
     private Coords coords;
