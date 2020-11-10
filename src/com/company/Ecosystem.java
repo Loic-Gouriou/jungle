@@ -12,7 +12,7 @@ public class Ecosystem {
     private Prey[] preyList;
     private Plant[] plantList;
 
-    private static Ecosystem ecosystemInstance;
+    private static Ecosystem ecosystemInstance = null;
 
     static public Ecosystem getInstance(){
         if(ecosystemInstance == null){
@@ -39,8 +39,10 @@ public class Ecosystem {
     }
 
 
-    public void startLife() {
+    public void startLifeCycle() {
         while (true) {
+
+            waterSpot.update();
 
             for (Prey prey: preyList){
                 prey.update();
@@ -55,7 +57,7 @@ public class Ecosystem {
             }
 
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
             }
 
             catch (InterruptedException e) {

@@ -2,6 +2,8 @@ package com.company;
 
 public class Prey {
 
+    private  static final int drinkQuantity = 3;
+
     private int Age;
     private int AgeMax;
     private static final int AgeMaxAll = 42;
@@ -28,7 +30,7 @@ public class Prey {
 
     }
     public void drink(WaterSpot waterSpot){
-
+        int waterAvalaible = waterSpot.getWaterForDrink(drinkQuantity);
     }
     public void move(){
 

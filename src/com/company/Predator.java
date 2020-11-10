@@ -3,6 +3,7 @@ package com.company;
 public class Predator {
 
     private  static final int drinkQuantity = 3;
+
     private int Age;
     private int AgeMax;
     private static final int AgeMaxAll = 42;
@@ -15,8 +16,6 @@ public class Predator {
     private Vision vision;
 
     private Coords coords;
-
-
 
     public void hunt(Prey prey){
 
