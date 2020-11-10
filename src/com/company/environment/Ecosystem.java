@@ -1,11 +1,14 @@
-package com.company;
+package com.company.environment;
+
+import com.company.creatures.Predator;
+import com.company.creatures.Prey;
 
 public class Ecosystem {
 
     private int waterWidth;
     private int waterHeight;
 
-    private WaterSpot waterSpot;
+    private Terrain Terrain;
 
     private static final int MAX_ARRAY_ELEMENTS = 10;
     private Predator[] predatorList;
@@ -22,11 +25,7 @@ public class Ecosystem {
     }
 
     private Ecosystem() {
-
-        waterHeight = 30;
-        waterWidth = 120;
-        waterSpot = new WaterSpot(1500, waterHeight / 4, waterWidth / 4);
-
+        Terrain = new Terrain();
         predatorList = new Predator[MAX_ARRAY_ELEMENTS];
         preyList = new Prey[MAX_ARRAY_ELEMENTS];
         plantList = new Plant[MAX_ARRAY_ELEMENTS];
@@ -42,7 +41,7 @@ public class Ecosystem {
     public void startLifeCycle() {
         while (true) {
 
-            waterSpot.update();
+            Terrain.update();
 
             for (Prey prey: preyList){
                 prey.update();
@@ -67,6 +66,6 @@ public class Ecosystem {
     }
 
     public WaterSpot getWaterSpot(){
-        return waterSpot;
+        return Terrain.getTerrainWaterSpot();
     }
 }
