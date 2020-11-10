@@ -18,14 +18,16 @@ public class WaterSpot {
     }
 
     public int getWaterForDrink(int WaterQuantityRequested) {
+        int waterAvailable = waterQuantity;
         if (waterQuantity > WaterQuantityRequested) {
             waterQuantity -= WaterQuantityRequested;
+            waterAvailable = WaterQuantityRequested;
+
             return WaterQuantityRequested;
         } else if (waterQuantity > 0) {
-            WaterQuantityRequested = waterQuantity;
             waterQuantity = 0;
 
         }
-        return WaterQuantityRequested;
+        return waterAvailable;
     }
 }
