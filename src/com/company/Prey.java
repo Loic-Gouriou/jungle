@@ -34,4 +34,7 @@ public class Prey {
 
     }
 
+    public void update() {
+        drink(Ecosystem.getInstance().getWaterSpot());
+    }
 }

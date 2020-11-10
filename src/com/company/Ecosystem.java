@@ -7,14 +7,64 @@ public class Ecosystem {
 
     private WaterSpot waterSpot;
 
+    private static final int MAX_ARRAY_ELEMENTS = 100;
+    private Predator[] predatorList;
+    private Prey[] preyList;
+    private Plant[] plantList;
 
-    public Ecosystem(){
-        waterHeight = 30;
-        waterWidth = 120;
-        waterSpot = new WaterSpot(500, waterHeight/4, waterWidth/4);
+    private static Ecosystem ecosystemInstance;
+
+    static public Ecosystem getInstance(){
+        if(ecosystemInstance == null){
+        ecosystemInstance = new Ecosystem();
+        }
+        return ecosystemInstance;
     }
 
-    public Ecosystem(WaterSpot waterSpot) {
-        this.waterSpot = waterSpot;
+    private Ecosystem() {
+
+        waterHeight = 30;
+        waterWidth = 120;
+        waterSpot = new WaterSpot(1500, waterHeight / 4, waterWidth / 4);
+
+        predatorList = new Predator[MAX_ARRAY_ELEMENTS];
+        preyList = new Prey[MAX_ARRAY_ELEMENTS];
+        plantList = new Plant[MAX_ARRAY_ELEMENTS];
+
+        for (int i = 0; i < MAX_ARRAY_ELEMENTS; i++) {
+            predatorList[i] = new Predator();
+            preyList[i] = new Prey();
+            plantList[i] = new Plant();
+        }
+    }
+
+
+    public void startLife() {
+        while (true) {
+
+            for (Prey prey: preyList){
+                prey.update();
+            }
+
+            for (Predator pred : predatorList){
+                pred.update();
+            }
+
+            for (Plant plant : plantList){
+                plant.update();
+            }
+
+            try {
+                Thread.sleep(100);
+            }
+
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public WaterSpot getWaterSpot(){
+        return waterSpot;
     }
 }
