@@ -7,7 +7,7 @@ public class Ecosystem {
 
     private WaterSpot waterSpot;
 
-    private static final int MAX_ARRAY_ELEMENTS = 100;
+    private static final int MAX_ARRAY_ELEMENTS = 10;
     private Predator[] predatorList;
     private Prey[] preyList;
     private Plant[] plantList;
